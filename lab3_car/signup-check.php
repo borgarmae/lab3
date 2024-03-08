@@ -37,7 +37,7 @@ function sendMail($email, $v_code){
         $mail->Subject = 'Verify Email';
         $mail->Body    = "Thank you for your registration! 
             Please click the verify link to verify your account.'
-            <a href = 'http://localhost/lab3_car/verify.php?email=$email&v_code=$v_code'>Verify</a>";
+            <a href = 'http://localhost/lab3/lab3_car/verify.php?email=$email&v_code=$v_code'>Verify</a>";
         
     
         $mail->send();
