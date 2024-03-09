@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title>SIGNUP</title>
+  <title>SIGNUP</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -42,25 +42,6 @@
       border-color: #ff4f9e;
     }
 
-    .error {
-      background: #f49999;
-      font-size: 15px;
-      color: #fa1f1f;
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      margin: 20px auto;
-    }
-
-    .success {
-      background: #befba4;
-      font-size: 15px;
-      color: #0bff1f;
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      margin: 20px auto;
-    }
 
     * {
       font-family: serif;
@@ -81,125 +62,125 @@
         <p class="text-center">Please fill in this form to create an account.</p>
         <hr>
 
-        <!-- Display error message -->
         <?php if (isset($_GET['error'])) { ?>
-          <p class="error"><?php echo $_GET['error']; ?>
-          <p>
-          <?php } ?>
-
-          <!-- Display success message -->
-          <?php if (isset($_GET['success'])) { ?>
-          <p class="success"><?php echo $_GET['success']; ?>
-          <p>
-          <?php } ?>
-
-          <!-- First Name, Middle Name, Last Name input fields -->
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <?php if (isset($_GET['first_name'])) { ?>
-                <input type="text" name="first_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name" value="<?php echo $_GET['first_name']; ?>">
-              <?php } else { ?>
-                <input type="text" name="first_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name">
-              <?php } ?>
-            </div>
-            <div class="form-group col-md-4">
-              <?php if (isset($_GET['middle_name'])) { ?>
-                <input type="text" name="middle_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name" value="<?php echo $_GET['middle_name']; ?>">
-              <?php } else { ?>
-                <input type="text" name="middle_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name">
-              <?php } ?>
-            </div>
-            <div class="form-group col-md-4">
-              <?php if (isset($_GET['last_name'])) { ?>
-                <input type="text" name="last_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name" value="<?php echo $_GET['last_name']; ?>">
-              <?php } else { ?>
-                <input type="text" name="last_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name">
-              <?php } ?>
-            </div>
+          <div class="alert alert-danger"><?php echo $_GET['error']; ?>
           </div>
+        <?php } ?>
 
-          <!-- Username input field -->
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fa-solid fa-user" style="color: #f051a6;"></i>
-                </span>
-              </div>
-              <?php if (isset($_GET['uname'])) { ?>
-                <input type="text" name='uname' class="form-control" placeholder="Username" value="<?php echo $_GET['uname']; ?>">
-              <?php } else { ?>
-                <input type="text" name='uname' class="form-control" placeholder="Username">
-              <?php } ?>
+        <!-- Display success message -->
+        <?php if (isset($_GET['success'])) { ?>
+          <div class="alert alert-success"><?php echo $_GET['success']; ?>
+          </div>
+        <?php } ?>
+
+        <!-- First Name, Middle Name, Last Name input fields -->
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <?php if (isset($_GET['first_name'])) { ?>
+              <input type="text" name="first_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name" value="<?php echo $_GET['first_name']; ?>">
+            <?php } else { ?>
+              <input type="text" name="first_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name">
+            <?php } ?>
+          </div>
+          <div class="form-group col-md-4">
+            <?php if (isset($_GET['middle_name'])) { ?>
+              <input type="text" name="middle_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name" value="<?php echo $_GET['middle_name']; ?>">
+            <?php } else { ?>
+              <input type="text" name="middle_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name">
+            <?php } ?>
+          </div>
+          <div class="form-group col-md-4">
+            <?php if (isset($_GET['last_name'])) { ?>
+              <input type="text" name="last_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name" value="<?php echo $_GET['last_name']; ?>">
+            <?php } else { ?>
+              <input type="text" name="last_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name">
+            <?php } ?>
+          </div>
+        </div>
+
+        <!-- Username input field -->
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa-solid fa-user" style="color: #f051a6;"></i>
+              </span>
             </div>
+            <?php if (isset($_GET['uname'])) { ?>
+              <input type="text" name='uname' class="form-control" placeholder="Username" value="<?php echo $_GET['uname']; ?>">
+            <?php } else { ?>
+              <input type="text" name='uname' class="form-control" placeholder="Username">
+            <?php } ?>
           </div>
+        </div>
 
 
-          <!-- Email input field -->
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fa-solid fa-envelope" style="color: #f051a6;"></i>
-                </span>
-              </div>
-              <?php if (isset($_GET['email'])) { ?>
-                <input type="email" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" class="form-control" placeholder="Email" value="<?php echo $_GET['email']; ?>">
-              <?php } else { ?>
-                <input type="email" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" class="form-control" placeholder="Email">
-              <?php } ?>
+        <!-- Email input field -->
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa-solid fa-envelope" style="color: #f051a6;"></i>
+              </span>
             </div>
+            <?php if (isset($_GET['email'])) { ?>
+              <input type="email" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" class="form-control" placeholder="Email" value="<?php echo $_GET['email']; ?>">
+            <?php } else { ?>
+              <input type="email" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" class="form-control" placeholder="Email">
+            <?php } ?>
           </div>
+        </div>
 
 
-          <!-- Password input field -->
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fa-solid fa-lock" style="color: #f051a6;"></i>
-                </span>
-              </div>
-              <?php if (isset($_GET['password'])) { ?>
-                <input type="password" name='password' class="form-control" placeholder="Password" value="<?php echo $_GET['password']; ?>">
-              <?php } else { ?>
-                <input type="password" name='password' class="form-control" placeholder="Password">
-              <?php } ?>
+        <!-- Password input field -->
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa-solid fa-lock" style="color: #f051a6;"></i>
+              </span>
             </div>
+            <?php if (isset($_GET['password'])) { ?>
+              <input type="password" name='password' class="form-control" placeholder="Password" value="<?php echo $_GET['password']; ?>">
+            <?php } else { ?>
+              <input type="password" name='password' class="form-control" placeholder="Password">
+            <?php } ?>
           </div>
+        </div>
 
 
-          <!-- Confirm password input field -->
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fa-solid fa-lock" style="color: #f051a6;"></i>
-                </span>
-              </div>
-              <?php if (isset($_GET['cpassword'])) { ?>
-                <input type="password" name='cpassword' class="form-control" placeholder="Retype Password" value="<?php echo $_GET['cpassword']; ?>">
-              <?php } else { ?>
-                <input type="password" name='cpassword' class="form-control" placeholder="Retype Password">
-              <?php } ?>
+        <!-- Confirm password input field -->
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa-solid fa-lock" style="color: #f051a6;"></i>
+              </span>
             </div>
+            <?php if (isset($_GET['cpassword'])) { ?>
+              <input type="password" name='cpassword' class="form-control" placeholder="Retype Password" value="<?php echo $_GET['cpassword']; ?>">
+            <?php } else { ?>
+              <input type="password" name='cpassword' class="form-control" placeholder="Retype Password">
+            <?php } ?>
           </div>
+        </div>
 
-          <!-- Agree to terms and conditions checkbox -->
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="termsCheck" required>
-            <label class="form-check-label" for="termsCheck">I agree to the Terms & Conditions</label>
-          </div>
+        <!-- Agree to terms and conditions checkbox -->
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="termsCheck" required>
+          <label class="form-check-label" for="termsCheck">I agree to the Terms & Conditions</label>
+        </div>
 
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-pink mt-3 btn-block">Sign up</button>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-pink mt-3 btn-block">Sign up</button>
 
-          <!-- Login Link -->
-          <div class="mt-3 text-center">
-            Already have an account? <a href="login.php">Sign in</a>
-          </div>
+        <!-- Login Link -->
+        <div class="mt-3 text-center">
+          Already have an account? <a href="login.php">Sign in</a>
+        </div>
       </div>
     </div>
   </form>
 </body>
+
 </html>

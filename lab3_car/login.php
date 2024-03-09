@@ -40,25 +40,6 @@
             border-color: #ff4f9e;
         }
 
-        .error {
-            background: #f49999;
-            font-size: 15px;
-            color: #fa1f1f;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            margin: 20px auto;
-        }
-
-        .success {
-            background: #befba4;
-            font-size: 15px;
-            color: #0bff1f;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            margin: 20px auto;
-        }
 
         * {
             font-family: serif;
@@ -96,14 +77,14 @@
 
                 <!-- Display error message -->
                 <?php if (isset($_GET['error'])) { ?>
-                    <p class="error"><?php echo $_GET['error']; ?>
-                    <p>
+                    <div class="alert alert-danger"><?php echo $_GET['error']; ?>
+                </div>
                     <?php } ?>
 
                     <!-- Display success message -->
                     <?php if (isset($_GET['success'])) { ?>
-                    <p class="success"><?php echo $_GET['success']; ?>
-                    <p>
+                    <div class="alert alert-success"><?php echo $_GET['success']; ?>
+                    </div>
                     <?php } ?>
 
 

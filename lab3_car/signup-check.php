@@ -100,11 +100,11 @@ if (isset($_POST['first_name']) && isset($_POST['middle_name']) && isset($_POST[
         
 
         // Check if the user name already exists in the database
-        $sql = "SELECT * FROM user WHERE user_name='$uname'";
+        $sql = "SELECT * FROM user WHERE user_name='$uname' OR email='$email'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0){
-            header("Location: signup.php?error=The user name is already taken&$user_data");
+            header("Location: signup.php?error=The user name or email is already taken&$user_data");
         }else{
             // Insert the user data into the database
             $sql2 = "INSERT INTO user (user_name, email, password, first_name, middle_name, last_name, verification_code, is_verified, status) 
