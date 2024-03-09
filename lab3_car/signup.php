@@ -44,18 +44,20 @@
 
     .error {
       background: #f49999;
+      font-size: 15px;
       color: #fa1f1f;
       padding: 10px;
-      width: 95%;
+      width: 100%;
       border-radius: 5px;
       margin: 20px auto;
     }
 
     .success {
       background: #befba4;
+      font-size: 15px;
       color: #0bff1f;
       padding: 10px;
-      width: 95%;
+      width: 100%;
       border-radius: 5px;
       margin: 20px auto;
     }
@@ -95,23 +97,23 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <?php if (isset($_GET['first_name'])) { ?>
-                <input type="text" name="first_name" pattern="[A-Za-z]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name" value="<?php echo $_GET['first_name']; ?>">
+                <input type="text" name="first_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name" value="<?php echo $_GET['first_name']; ?>">
               <?php } else { ?>
-                <input type="text" name="first_name" pattern="[A-Za-z]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name">
+                <input type="text" name="first_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="First Name">
               <?php } ?>
             </div>
             <div class="form-group col-md-4">
               <?php if (isset($_GET['middle_name'])) { ?>
-                <input type="text" name="middle_name" pattern="[A-Za-z]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name" value="<?php echo $_GET['middle_name']; ?>">
+                <input type="text" name="middle_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name" value="<?php echo $_GET['middle_name']; ?>">
               <?php } else { ?>
-                <input type="text" name="middle_name" pattern="[A-Za-z]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name">
+                <input type="text" name="middle_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Middle Name">
               <?php } ?>
             </div>
             <div class="form-group col-md-4">
               <?php if (isset($_GET['last_name'])) { ?>
-                <input type="text" name="last_name" pattern="[A-Za-z]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name" value="<?php echo $_GET['last_name']; ?>">
+                <input type="text" name="last_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name" value="<?php echo $_GET['last_name']; ?>">
               <?php } else { ?>
-                <input type="text" name="last_name" pattern="[A-Za-z]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name">
+                <input type="text" name="last_name" pattern="[A-Za-z ]+" title="Only alphabets are allowed" class="form-control" placeholder="Last Name">
               <?php } ?>
             </div>
           </div>

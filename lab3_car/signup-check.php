@@ -36,7 +36,7 @@ function sendMail($email, $v_code){
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Verify Email';
         $mail->Body    = "Thank you for your registration! 
-            Please click the verify link to verify your account.'
+            Please click the verify link to verify your account.
             <a href = 'http://localhost/lab3/lab3_car/verify.php?email=$email&v_code=$v_code'>Verify</a>";
         
     
@@ -95,8 +95,8 @@ if (isset($_POST['first_name']) && isset($_POST['middle_name']) && isset($_POST[
         exit();
     }else{
         // Hash the password
-        $password = md5($password);
-        $v_code = bin2hex(random_bytes(16));
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $v_code = bin2hex(random_bytes(32));
         
 
         // Check if the user name already exists in the database
@@ -107,11 +107,12 @@ if (isset($_POST['first_name']) && isset($_POST['middle_name']) && isset($_POST[
             header("Location: signup.php?error=The user name is already taken&$user_data");
         }else{
             // Insert the user data into the database
-            $sql2 = "INSERT INTO user (user_name, email, password, first_name, middle_name, last_name, verification_code, is_verified) 
-            VALUES('$uname', '$email', '$password', '$first_name', '$middle_name', '$last_name', '$v_code', '0')";
+            $sql2 = "INSERT INTO user (user_name, email, password, first_name, middle_name, last_name, verification_code, is_verified, status) 
+            VALUES('$uname', '$email', '$password', '$first_name', '$middle_name', '$last_name', '$v_code', '0', 'offline')";
             $result2 = mysqli_query($conn, $sql2);
 
             if($result2){
+                // Send a verification email to the user
                 if(sendMail($email, $v_code)){
                     header("Location: signup.php?success=Account has been created. Please check your email for verification.");
                     exit();

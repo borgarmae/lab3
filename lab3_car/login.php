@@ -42,18 +42,20 @@
 
         .error {
             background: #f49999;
+            font-size: 15px;
             color: #fa1f1f;
             padding: 10px;
-            width: 95%;
+            width: 100%;
             border-radius: 5px;
             margin: 20px auto;
         }
 
         .success {
             background: #befba4;
+            font-size: 15px;
             color: #0bff1f;
             padding: 10px;
-            width: 95%;
+            width: 100%;
             border-radius: 5px;
             margin: 20px auto;
         }
@@ -65,6 +67,17 @@
 
         .form-control {
             margin: 5px;
+        }
+
+        .input-group {
+            align-items: center;
+
+        }
+
+        .input-group-text {
+            display: -webkit-box;
+            border-radius: 0.20em 0 0 0.20em;
+
         }
     </style>
 
@@ -93,6 +106,7 @@
                     <p>
                     <?php } ?>
 
+
                     <!-- Username input field -->
                     <div class="form-group">
                         <div class="input-group">
@@ -101,7 +115,11 @@
                                     <i class="fa-solid fa-user" style="color: #f051a6;"></i>
                                 </span>
                             </div>
-                            <input type="text" name="uname" class="form-control" placeholder="Username">
+                            <?php if (isset($_GET['uname'])) { ?>
+                                <input type="text" name='uname' class="form-control" placeholder="Username" value="<?php echo $_GET['uname']; ?>">
+                            <?php } else { ?>
+                                <input type="text" name='uname' class="form-control" placeholder="Username">
+                            <?php } ?>
                         </div>
                     </div>
 
@@ -125,7 +143,7 @@
 
                     <!-- Login Link -->
                     <div class="mt-3 text-center">
-                        <a href="signup.php">Create an account</a>
+                        Don't have an account? <a href="signup.php">Sign up</a>
                     </div>
 
             </div>
